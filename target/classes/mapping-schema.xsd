@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="source" type="source" />
+	<xs:complexType name="source">
+		<xs:sequence>
+			<xs:element name="table" type="table" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="sourceLocation" use="required" />
+		<xs:attribute type="xs:string" name="targetLocation" use="required" />
+		<xs:attribute type="xs:string" name="targetName" use="required" />
+		<xs:attribute type="xs:string" name="delimiter" use="required" />
+	</xs:complexType>
+	<xs:complexType name="table">
+		<xs:sequence>
+			<xs:element name="column" type="column" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="name" use="required" />
+
+	</xs:complexType>
+
+	<xs:complexType name="column">
+		<xs:sequence>
+			<xs:element name="validation" maxOccurs="unbounded"
+				minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="null" />
+						<xs:enumeration value="required" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute type="xs:int" name="pos" use="required" />
+		<xs:attribute type="xs:string" name="name" use="required" />
+		<xs:attribute name="dataType" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="CHAR" />
+					<xs:enumeration value="INT" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

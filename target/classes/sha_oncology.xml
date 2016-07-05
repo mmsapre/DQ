@@ -1,0 +1,29 @@
+<source sourceLocation="E:/Project/Workspace/dq/employee.txt" targetLocation="tier" targetName="tier" delimiter="\t"
+	noNamespaceSchemaLocation="mapping-schema.xsd">
+	<table name="tier">
+		<column name="patId" pos="0" dataType="string">
+			<validation>NOTNULL</validation>
+			<validation>UNIQUE</validation>
+		</column>
+		<column name="name" pos="1" dataType="string">
+			<validation>NOTNULL</validation>
+		</column>
+		<column name="age" pos="2" dataType="string">
+			<validation>NOTNULL</validation>
+		</column>
+	</table>
+<!-- 	<table name="tier1"> -->
+<!-- 		<column name="id" pos="0" dataType="CHAR"> -->
+<!-- 			<validation>null</validation> -->
+<!-- 			<validation>required</validation> -->
+<!-- 		</column> -->
+<!-- 		<column name="name" pos="2" dataType="CHAR"> -->
+<!-- 			<validation>null</validation> -->
+<!-- 			<validation>required</validation> -->
+<!-- 		</column> -->
+<!-- 		<column name="age" pos="0" dataType="CHAR"> -->
+<!-- 			<validation>null</validation> -->
+<!-- 			<validation>required</validation> -->
+<!-- 		</column> -->
+<!-- 	</table> -->
+</source>
